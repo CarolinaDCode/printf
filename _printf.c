@@ -29,6 +29,8 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			print_letter(letter, &len);
+			while (format[i] == ' ')
+				i++;
 			retlen = print(format[i], arguments, letter);
 			if (retlen == -1)
 				return (-1);
