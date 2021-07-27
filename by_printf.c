@@ -25,6 +25,7 @@ int print(char format, va_list args, char letter[])
 	else
 	{
 		ptr_char = convertion(format, args);
+		if (ptr_char)
 		if (format == 'c' && ptr_char[0] == '\0')
 		{
 			letter[len2++] = 0;
@@ -39,6 +40,11 @@ int print(char format, va_list args, char letter[])
 				lentotal++;
 			}
 			free(ptr_char);
+		}
+		else
+		{
+			letter[len2++] = '%';
+			lentotal++;
 		}
 	}
 	print_letter(letter, &len2);
