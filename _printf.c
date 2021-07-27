@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-
 			if (format[i] == '\0')
 			{
 				write(1, letter, len);
@@ -34,17 +33,20 @@ int _printf(const char *format, ...)
 			}
 			if (format[i] == '%')
 				letter[len++] = '%';
-			ptr_char = convertion(format[i], arguments);
-			if (format[i] == 'c' && ptr_char[0] == '\0')
-				letter[len++] = 0;
-			if (ptr_char != NULL)
+			else
 			{
-				for (e = 0; ptr_char[e] != '\0'; e++)
-					letter[len++] = ptr_char[e];
+				ptr_char = convertion(format[i], arguments);
+				if (format[i] == 'c' && ptr_char[0] == '\0')
+					letter[len++] = 0;
+				if (ptr_char != NULL)
+				{
+					for (e = 0; ptr_char[e] != '\0'; e++)
+						letter[len++] = ptr_char[e];
+					free(ptr_char);
+				}
 			}
 		}
 	}
-	free(ptr_char);
 	va_end(arguments);
 	write(1, letter, len);
 	return (len);
