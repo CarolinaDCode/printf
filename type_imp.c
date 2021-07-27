@@ -78,10 +78,15 @@ char *func_string(va_list args)
 	int i;
 	int size = 0;
 
+	if (param == NULL)
+		param = "(null)";
+
 	for (i = 0; param[i] != '\0'; i++)
 		size++;
 
 	d_param = malloc(sizeof(char) * size + 1);
+	if (d_param == NULL)
+		return (0);
 
 	for (i = 0; i < size; i++)
 		d_param[i] = param[i];
