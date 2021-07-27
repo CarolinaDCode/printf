@@ -45,6 +45,8 @@ int print(char format, va_list args, char letter[])
 		{
 			letter[len2++] = '%';
 			lentotal++;
+			letter[len2++] = format;
+                        lentotal++;
 		}
 	}
 	print_letter(letter, &len2);
