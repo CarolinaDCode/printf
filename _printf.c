@@ -10,46 +10,34 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, e = 0, len = 0;
-	char letter[100], *ptr_char;
+	int i, len = 0, lentotal = 0, retlen = 0;
+	char letter[100];
 	va_list arguments;
 
 	if (format == NULL)
 		return (-1);
 	va_start(arguments, format);
-	if (letter == NULL)
-		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
+		{
+			check_letter(letter, &len);
 			letter[len++] = format[i];
+			lentotal++;
+		}
 		else
 		{
 			i++;
-			if (format[i] == '\0')
-			{
-				write(1, letter, len);
+			print_letter(letter, &len);
+			retlen = print(format[i], arguments, letter);
+			if (retlen == -1)
 				return (-1);
-			}
-			if (format[i] == '%')
-				letter[len++] = '%';
-			else
-			{
-				ptr_char = convertion(format[i], arguments);
-				if (format[i] == 'c' && ptr_char[0] == '\0')
-					letter[len++] = 0;
-				if (ptr_char != NULL)
-				{
-					for (e = 0; ptr_char[e] != '\0'; e++)
-						letter[len++] = ptr_char[e];
-					free(ptr_char);
-				}
-			}
+			lentotal += retlen;
 		}
 	}
 	va_end(arguments);
 	write(1, letter, len);
-	return (len);
+	return (lentotal);
 }
 
 /**

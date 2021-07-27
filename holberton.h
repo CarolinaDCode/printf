@@ -15,8 +15,12 @@ struct typeDate_impresion
 typedef struct typeDate_impresion t_Date;
 
 int _printf(const char *format, ...);
+int print(char format, va_list args, char letter[]);
+void check_letter(char letter[], int *len);
+void print_letter(char letter[], int *len);
 char *(*func_type(char s))(va_list);
 char *convertion(char format, va_list args);
+
 char *func_integer(va_list args);
 char *func_character(va_list args);
 char *func_string(va_list args);
