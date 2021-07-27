@@ -10,14 +10,10 @@
  */
 char *func_integer(va_list args)
 {
-	int n = va_arg(args, int);
-	int cont = 1;
+	int n = va_arg(args, int), cont = 1, e = 0, temp = n, uniq = 0, divisor;
 	unsigned int numOriginal;
-	int uniq = 0;
-	int divisor, veces, i;
 	char *ptr_int;
-	int e = 0;
-	int temp = n;
+	int veces, i;
 
 	while (temp > 9 || temp < -9)
 	{
@@ -33,7 +29,8 @@ char *func_integer(va_list args)
 	}
 	else
 		ptr_int = malloc(sizeof(char) * cont + 1);
-
+	if (ptr_int == NULL)
+		return (0);
 	numOriginal = n;
 	for (i = cont ; i > 0 ; i--)
 	{
