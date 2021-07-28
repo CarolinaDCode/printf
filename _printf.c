@@ -55,6 +55,11 @@ char *(*func_type(char s))(va_list)
 		{'i', func_integer},
 		{'c', func_character},
 		{'s', func_string},
+		{'b', func_binary},
+		{'u', func_unsint},
+		{'o', func_octonal},
+		{'x', func_hexadmin},
+		{'X', func_hexadmay},
 		{'\0', NULL}
 	};
 
