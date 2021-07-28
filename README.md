@@ -1,6 +1,5 @@
 # _Printf
-Es el primer proyecto de programación de lenguaje en bajo nivel escrito en lenguaje C. Este proyecto representa una de las funciones de salida principales del lenguaje C. El desarrollo de este proyecto se logró en base a los conocimientos adquiridos durante nuestra primera etapa, como estudiantes de Holberton de la cohort 15.
-
+It is the first low-level language programming project written in C language. This project represents one of the main output functions of the C language. The development of this project was achieved based on the knowledge acquired during our first stage, as students. from "Holberton" from cohort 15.
 
 ## Contenido
 <!-- toc -->
@@ -54,12 +53,11 @@ file: [holberton.c](./holberton.c)
 file: [by_printf.c](./by_printf.c)
 
 
-|   Function | Details                                                      |
+| Function | Details                                                      |
 | ---------: | ------------------------------------------------------------ |
-|    print | function that prints a string according to each specifier that is included in a structure. |
+|  print | function that prints a string according to each specifier that is included in a structure. |
 | check_letter | Function that verifies that the maximum number of characters has been reached to print it and then reset the buffer.  |
-|    print_letter |
-Function that prints the characters in the buffer being greater than zero and regardless of the maximum amount. |
+|    print_letter | Function that prints the characters in the buffer being greater than zero and regardless of the maximum amount. |
 
 
 [back to files](#Files)
