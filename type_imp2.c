@@ -81,7 +81,7 @@ char *func_hexadmin(va_list args)
 {
 	int i, len, j;
 	unsigned int c = va_arg(args, unsigned int);
-	unsigned int temp =c;
+	unsigned int temp = c;
 	unsigned int hexadnum[6] = {10, 11, 12, 13, 14, 15};
 	char hexadchar[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
 	char *hexadmin;
@@ -125,7 +125,7 @@ char *func_hexadmay(va_list args)
 {
 	int i, len, j;
 	unsigned int c = va_arg(args, unsigned int);
-	unsigned int temp =c;
+	unsigned int temp = c;
 	unsigned int  hexadnum[6] = {10, 11, 12, 13, 14, 15};
 	char hexadchar[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
 	char *hexadmay;
