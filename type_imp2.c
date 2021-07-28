@@ -57,6 +57,9 @@ char *func_octonal(va_list args)
 	for (len = 0; temp; len++)
 		temp /= 8;
 
+	if(c == 0)
+		len = 1;
+
 	octonal = malloc(len + 1);
 	if (octonal == NULL)
 		return (0);
@@ -88,6 +91,9 @@ char *func_hexadmin(va_list args)
 
 	for (len = 0; temp; len++)
 		temp /= 16;
+
+	if (c == 0)
+		len = 1;
 
 	hexadmin = malloc(len + 1);
 	if (hexadmin == NULL)
@@ -132,6 +138,9 @@ char *func_hexadmay(va_list args)
 
 	for (len = 0; temp; len++)
 		temp /= 16;
+	
+	if (c == 0)
+		len = 1;
 
 	hexadmay = malloc(len + 1);
 	if (hexadmay == NULL)
