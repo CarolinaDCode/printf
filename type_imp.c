@@ -110,6 +110,9 @@ char *func_binary(va_list args)
 
 	for (len = 0; temp; len++)
 		temp /= 2;
+	
+	if(c == 0)
+		len = 1;
 
 	binary = malloc(len + 1);
 	if (binary == NULL)
