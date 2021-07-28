@@ -179,11 +179,13 @@ char *func_stringup(va_list args)
 	char *d_param, *param = va_arg(args, char *);
 	int i, len = 0, cont = 0, j, c = 0, size = 0;
 	char hexadchar[6] = {'A', 'B','C','D','E','F'};
-
+	
+	if (param == NULL)
+		return (0);
 	for(i = 0; param[i] != '\0'; i++)
 	{
 		size++;
-		if (param[i] < 32 || param[i] >= 127)
+		if ((param[i] > 0 && param[i] < 32) || param[i] >= 127)
 			cont++;
 	}
 
