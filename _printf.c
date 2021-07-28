@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 /**
  *func_type - function for a structure;
  *@s: s
- *Return: value ok
+ *Return: value
  */
 char *(*func_type(char s))(va_list)
 {
@@ -78,7 +78,7 @@ char *(*func_type(char s))(va_list)
  *convertion - function that brings the value that each specifier has.
  *@format: format
  *@args: args
- *Return: char.
+ *Return: char ok
  */
 char *convertion(char format, va_list args)
 {
