@@ -1,0 +1,50 @@
+.TH man 3 "27 July 2021" "0.1" "_printf man page"
+.SH NAME
+.B _printf
+- Formatted output conversion.
+
+.SH SYNOPSIS
+.B #include "holberton.h"
+
+.B int _printf(const char *
+.I format
+.B , ...)
+
+.SH DESCRIPTION
+.B _printf()
+The _printf function prints a message to standard output under a string that specifies how the arguments for standard output are converted.
+
+.SH Format of the format string
+The format string is a character string and is made up of zero or more directives, the ordinary characters (not%); which they copy to the output stream. Each conversion specification is entered by the% character and ends with a conversion specifier, in between these two there can be zero or more flags, an optional minimum field width, an optional precision, and an optional length modifier.
+
+The general syntax of a conversion specification is:
+
+    %[$][flags][width][.precision][length modifier]conversion
+
+.SH Return value
+After a successful return, the _prinft function returns the number of characters printed, excluding the null byte used to finalize the output of strings.
+If an output error is encountered, a negative value is returned.
+
+.SH The conversion specifier
+A character that specifies the type of conversion to be applied.
+The conversion specifiers and their meanings are:
+
+.TP
+.BR c
+Prints a single character, in the case of having int as an argument it becomes an unsigned character, then the resulting character is written
+
+.TP
+.B s
+prints a string of characters.
+Characters from the array are written up to (but not including) a terminating null byte ('\0'); if a precision is specified, no more than the number specified are written.
+
+.TP
+.B %
+Print a '%' only in the case of passing '%%', in case of being only '%' no.
+
+.TP
+.B d, i
+The int argument is converted to signed decimal notation.
+
+.SH AUTHOR
+John Chávez, Diana Carhuamanta.
