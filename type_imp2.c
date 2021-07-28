@@ -57,7 +57,7 @@ char *func_octonal(va_list args)
 	for (len = 0; temp; len++)
 		temp /= 8;
 
-	if(c == 0)
+	if (c == 0)
 		len = 1;
 
 	octonal = malloc(len + 1);
@@ -138,7 +138,7 @@ char *func_hexadmay(va_list args)
 
 	for (len = 0; temp; len++)
 		temp /= 16;
-	
+
 	if (c == 0)
 		len = 1;
 
@@ -178,24 +178,24 @@ char *func_stringup(va_list args)
 {
 	char *d_param, *param = va_arg(args, char *);
 	int i, len = 0, cont = 0, j, c = 0, size = 0;
-	char hexadchar[6] = {'A', 'B','C','D','E','F'};
-	
+	char hexadchar[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
+
 	if (param == NULL)
 		return (0);
-	for(i = 0; param[i] != '\0'; i++)
+	for (i = 0; param[i] != '\0'; i++)
 	{
 		size++;
 		if ((param[i] > 0 && param[i] < 32) || param[i] >= 127)
 			cont++;
 	}
 
-	d_param = malloc(sizeof(char) * size + 1 + (cont *3));
+	d_param = malloc(sizeof(char) * size + 1 + (cont * 3));
 	if (d_param == NULL)
-		return(0);
+		return (0);
 
-	for(i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
-		if (param[i] < 32 || param[i] >= 127)
+		if ((param[i] < 32 && param[i] > 0) || param[i] >= 127)
 		{
 			c = param[i];
 			d_param[len++] = 92;
