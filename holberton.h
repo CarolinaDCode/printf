@@ -32,5 +32,6 @@ char *func_binary(va_list args);
 char *func_octonal(va_list args);
 char *func_hexadmin(va_list args);
 char *func_hexadmay(va_list args);
+char *func_stringup(va_list args);
 
 #endif
