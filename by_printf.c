@@ -61,7 +61,7 @@ int print(char format, va_list args, char letter[])
  */
 void check_letter(char letter[], int *len)
 {
-	if (*len == 100)
+	if (*len == 1024)
 	{
 		write(1, &letter[0], *len);
 		*len = 0;

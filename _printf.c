@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	int i, len = 0, lentotal = 0, retlen = 0;
-	char letter[100];
+	char letter[1024];
 	va_list arguments;
 
 	if (format == NULL)
