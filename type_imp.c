@@ -103,12 +103,10 @@ char *func_string(va_list args)
 
 char *func_binary(va_list args)
 {
-	int i, len, c = va_arg(args, int);
-	int temp = c;
+	int i, len;
+	unsigned int c = va_arg(args, unsigned int);
+	unsigned int temp = c;
 	char *binary;
-
-	if (c < 0)
-		return (0);
 
 	for (len = 0; temp; len++)
 		temp /= 2;
