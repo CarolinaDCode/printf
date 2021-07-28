@@ -78,7 +78,7 @@ char *(*func_type(char s))(va_list)
  *convertion - function that brings the value that each specifier has.
  *@format: format
  *@args: args
- *Return: char ok
+ *Return: char
  */
 char *convertion(char format, va_list args)
 {
