@@ -108,7 +108,7 @@ char *func_binary(va_list args)
 	char *binary;
 
 	if (c < 0)
-	       return (0);	
+		return (0);
 
 	for (len = 0; temp; len++)
 		temp /= 2;
