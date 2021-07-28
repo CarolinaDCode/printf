@@ -60,6 +60,7 @@ char *(*func_type(char s))(va_list)
 		{'o', func_octonal},
 		{'x', func_hexadmin},
 		{'X', func_hexadmay},
+		{'S', func_stringup},
 		{'\0', NULL}
 	};
 
