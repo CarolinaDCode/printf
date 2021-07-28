@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 /**
  *func_type - function for a structure;
  *@s: s
- *Return: value
+ *Return: value ok
  */
 char *(*func_type(char s))(va_list)
 {
