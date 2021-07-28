@@ -10,10 +10,14 @@
  */
 char *func_integer(va_list args)
 {
-	int n = va_arg(args, int), cont = 1, e = 0, temp = n, uniq = 0, divisor;
+	int n = va_arg(args, int);
+	int cont = 1;
 	unsigned int numOriginal;
+	int uniq = 0;
+	int divisor, veces, i;
 	char *ptr_int;
-	int veces, i;
+	int e = 0;
+	int temp = n;
 
 	while (temp > 9 || temp < -9)
 	{
@@ -29,8 +33,7 @@ char *func_integer(va_list args)
 	}
 	else
 		ptr_int = malloc(sizeof(char) * cont + 1);
-	if (ptr_int == NULL)
-		return (0);
+
 	numOriginal = n;
 	for (i = cont ; i > 0 ; i--)
 	{
@@ -90,4 +93,33 @@ char *func_string(va_list args)
 
 	d_param[i] = '\0';
 	return (d_param);
+}
+
+/**
+ *func_binary - function that return a integer
+ *@args: args
+ *Return: char
+ */
+
+char *func_binary(va_list args)
+{
+	int i, len, c = va_arg(args, unsigned int);
+	int temp = c;
+	char *binary;
+
+	for (len = 0; temp; len++)
+		temp /= 2;
+
+	binary = malloc(len + 1);
+	if (binary == NULL)
+		return (0);
+
+	for (i = 1; i <= len; i++)
+	{
+		binary[len - i] = (c % 2) + '0';
+		c = c / 2;
+	}
+	binary[len] = '\0';
+
+	return (binary);
 }

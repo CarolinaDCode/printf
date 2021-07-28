@@ -24,4 +24,10 @@ char *convertion(char format, va_list args);
 char *func_integer(va_list args);
 char *func_character(va_list args);
 char *func_string(va_list args);
+char *func_unsint(va_list args);
+char *func_binary(va_list args);
+char *func_octonal(va_list args);
+char *func_hexadmin(va_list args);
+char *func_hexadmay(va_list args);
+
 #endif
