@@ -46,5 +46,20 @@ Print a '%' only in the case of passing '%%', in case of being only '%' no.
 .B d, i
 The int argument is converted to signed decimal notation.
 
+.TP
+.B b
+The unsigned int argument is converted to binary.
+
+.TP
+.B o, u x, X
+The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation. The letters abcdef are used for x
+conversions; the letters ABCDEF are used for X conversions.
+
+.TP
+.B S
+Prints a string of characters. Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters).
+
+
+
 .SH AUTHOR
 John Chávez, Diana Carhuamanta.
